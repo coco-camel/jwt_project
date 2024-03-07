@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { getCookie } from "../cookies/cookies";
 import { useNavigate } from 'react-router-dom';
+
 export default (SpecialComponent, option) => {
 
     const AuthenticateCheck = () => {

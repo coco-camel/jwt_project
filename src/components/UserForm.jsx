@@ -41,11 +41,23 @@ function UserForm(props) {
   const [user, onChange] = useForm();
 
   const onClickLoginHandler = async () => {
-    await login(user, navigate);
+    if (user.id.trim() === "") {
+      return alert("아이디를 입력해 주세요 .");
+    } else if (user.password.trim() === "") {
+      return alert("비밀번호를 입력해 주세요.");
+    } else {
+      await login(user, navigate);
+    }
   };
 
   const onClickSignUpHandler = async () => {
-    await signUp(user, navigate);
+    if (user.id.trim() === "") {
+      return alert("아이디를 입력해 주세요 .");
+    } else if (user.password.trim() === "") {
+      return alert("비밀번호를 입력해 주세요.");
+    } else {
+      await signUp(user, navigate);
+    }
   };
 
   return (
